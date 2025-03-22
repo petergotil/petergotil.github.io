@@ -197,7 +197,7 @@ http://www.tooplate.com/view/2087-kalay
 					<h4>Christiashavns Skole</h4>
 
 					<em>
-						<span>Primary school<span>
+						<span>Primary School<span>
 						<span> | </span>
 						<span>2008-2018</span>
 					</em>
@@ -313,7 +313,7 @@ http://www.tooplate.com/view/2087-kalay
                     <p>Click on any project to learn more</p>
                </div>
 
-               <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+               <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
                     <a target="_blank" href="https://github.com/omkb/DIKUGames">
                          <div class="service-thumb">
                               <i class="fa fa-film" style="font-size: 45px; padding-left: 15px;"></i>
@@ -354,70 +354,94 @@ http://www.tooplate.com/view/2087-kalay
      </div>
 </section>
 
-
 <!-- CONTACT SECTION -->
-<div class="container py-5">
-     <div class="row justify-content-center">
-          <div class="col-lg-8 col-md-10">
-               <div class="card shadow-lg border-0 rounded-4 p-4">
-                    <div class="card-body">
-                         <h2 class="text-center mb-4">Get in Touch</h2>
-                         <form id="contact-form" target="_blank" action="https://formsubmit.co/petergotil@gmail.com"
-                              method="POST">
+<section id="contact" class="parallax-section">
+     <div class="container">
+          <div class="row">
 
-                              <!-- Name and Email Row -->
-                              <div class="row mb-3">
-                                   <div class="col">
-                                        <input type="text" name="name" class="form-control rounded-pill shadow-sm"
-                                             placeholder="Full Name" required>
+               <div class="col-md-12 col-sm-12">
+                    <!-- SECTION TITLE -->
+                    <div class="wow fadeInUp section-title" data-wow-delay="0.2s">
+                         <h2>Get in touch</h2>
+                         <p>If you want to contact me, fill out the following form and I will get back to you asap!</p>
+                    </div>
+               </div>
+
+               <div class="col-md-7 col-sm-10">
+                    <!-- CONTACT FORM HERE -->
+                    <div class="wow fadeInUp" data-wow-delay="0.4s">
+                         <form id='contact-form' data-toggle='validator' method='post'
+                              action='https://formsubmit.co/petergotil@gmail.com'>
+
+                              <div id='contact-form-result'></div>
+
+                              <div class='row'>
+
+                                   <div class='col-md-6'>
+                                        <div class='form-group'>
+
+                                             <input type='text' class='form-control' placeholder='Name'
+                                                  name='name_field' id='name_field' required>
+                                             <div class='help-block with-errors'></div>
+
+                                        </div>
                                    </div>
-                                   <div class="col">
-                                        <input type="email" name="email" class="form-control rounded-pill shadow-sm"
-                                             placeholder="Email Address" required>
+
+                                   <div class='col-md-6'>
+                                        <div class='form-group'>
+
+                                             <input type='email' class='form-control' placeholder='Email'
+                                                  name='email_field' id='email_field' required>
+                                             <div class='help-block with-errors'></div>
+
+                                        </div>
                                    </div>
+
                               </div>
 
-                              <!-- Message -->
-                              <div class="mb-3">
-                                   <textarea name="message" class="form-control rounded-4 shadow-sm" rows="6"
-                                        placeholder="Your Message" required></textarea>
+                              <div class='form-group'>
+
+                                   <input type='text' class='form-control' placeholder='Subject' name='subject_field'
+                                        id='subject_field' required>
+                                   <div class='help-block with-errors'></div>
+
                               </div>
 
-                              <!-- reCAPTCHA -->
-                              <div class="text-center mb-4">
-                                   <div class="g-recaptcha" data-sitekey="6LeSEP0qAAAAABv0eMfn8uQRIsTdEcsl3ovoQIZ0">
-                                   </div>
+                              <div class='form-group'>
+
+                                   <textarea class='form-control' placeholder='Message' name='message_area'
+                                        id='message_area' rows='5' required></textarea>
+                                   <div class='help-block with-errors'></div>
+
                               </div>
 
-                              <!-- Hidden Fields -->
-                              <input type="text" name="_honey" style="display:none">
-                              <input type="hidden" name="_captcha" value="false">
-                              <input type="hidden" name="_next" value="https://petergotil.dk/thank-you.html">
+                              <div class="g-recaptcha" data-sitekey="6LeSEP0qAAAAABv0eMfn8uQRIsTdEcsl3ovoQIZ0"></div>
+                              <br>
 
-                              <!-- Submit Button -->
-                              <div class="text-center">
-                                   <button type="submit" class="btn btn-primary btn-lg px-5 rounded-pill shadow-sm">Send
-                                        Message</button>
+                              <script>
+                                   var form = document.getElementById('contact-form');
+                                   form.addEventListener("submit", function (event) {
+                                        if (grecaptcha.getResponse() === '') {
+                                             event.preventDefault();
+                                             alert('You must select the reCaptcha before sending your message.');
+                                        }
+                                   }
+                                        , false);
+                              </script>
+
+                              <div class='form-group text-center'>
+                                   <button type='submit' class='btn-custom btn-color'>
+                                        Send Message
+                                   </button>
                               </div>
 
                          </form>
+
                     </div>
                </div>
           </div>
      </div>
-</div>
-
-<!-- reCAPTCHA Script -->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script>
-     var form = document.getElementById('contact-form');
-     form.addEventListener("submit", function (event) {
-          if (grecaptcha.getResponse() === "") {
-               event.preventDefault();
-               alert("Please complete the reCAPTCHA before submitting.");
-          }
-     }, false);
-</script>
+</section>
 
 <!-- FOOTER SECTION -->
 <footer>
