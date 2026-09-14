@@ -14,7 +14,6 @@ body {
     font-family: Lora, serif;
     font-style: normal;
     font-weight: normal;
-    overflow-x: hidden;
 }
 *{
 	font-family: inherit;
@@ -124,6 +123,21 @@ html{
   -webkit-font-smoothing: antialiased;
 }
 
+section[id] {
+  scroll-margin-top: 64px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #303F9F;
+  outline-offset: 3px;
+}
+
 a {
   color: #757557;
   -webkit-transition: 0.5s;
@@ -157,7 +171,7 @@ a:hover, a:active, a:focus {
   padding-bottom: 32px;
 }
 
-#service, #about, #work,
+#service, #about, #work, #projects,
 #contact, footer {
   position: relative;
   padding-top: 80px;
@@ -666,9 +680,60 @@ footer p {
   Mobile Responsive styles              
 -----------------------------------------*/
 
-@media (max-width: 980px) {
+/* Collapse before the desktop navigation runs out of room. */
+@media (max-width: 991px) {
+  .navbar-header {
+    float: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+    min-width: 44px;
+    min-height: 44px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+
+  .navbar-collapse {
+    border-top: 1px solid #e7e7e7;
+    max-height: calc(100vh - 51px);
+    max-height: calc(100dvh - 51px);
+  }
+
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+
+  .navbar-collapse.collapse.in {
+    display: block !important;
+    overflow-y: auto !important;
+  }
+
+  .navbar-nav,
+  .navbar-nav.navbar-right {
+    float: none !important;
+    margin: 7px 0;
+  }
+
+  .navbar-nav > li {
+    float: none;
+  }
+
+  .navbar-nav > li > a {
+    padding: 12px 15px;
+    min-height: 44px;
+  }
+
+  .parallax-section {
+    background-attachment: scroll !important;
+    background-position: center center !important;
+  }
+
   #home {
-    height: 55vh;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 100px 0 60px;
   }
 
   .service-thumb {
@@ -682,36 +747,103 @@ footer p {
 }
 
 
-@media (max-width: 768px) {
-  #home {
-    height: 85vh;
-  }
-}
-
-
-@media (max-width: 580px) {
-
+@media (max-width: 767px) {
   h1 {
-    font-size: 29px;
+    font-size: 32px;
   }
 
   h2 {
-    font-size: 23px;
+    font-size: 26px;
+    line-height: 1.35;
+  }
+
+  h4 {
+    line-height: 1.4;
   }
 
   #home {
-    height: 95vh;
+    align-items: flex-end;
+    text-align: center;
   }
 
-  .contact-info {
-    margin-top: 42px;
+  #home h1,
+  #home p {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, .7);
   }
-}
 
+  #service, #about, #work, #projects, #contact, footer {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
 
-@media (max-width: 320px) {
-  #home {
-    height: 125vh;
+  #about > .container > .row,
+  #work > .container > .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #projects .section-title {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .timeline {
+    padding: 16px 0;
+    margin-left: 8px;
+  }
+
+  .timeline > li {
+    padding-left: 20px;
+    margin-bottom: 24px;
+  }
+
+  .timeline > li > .timeline-content {
+    padding: 16px;
+    overflow-wrap: anywhere;
+  }
+
+  .timeline > li > .timeline-content:before {
+    left: -20px;
+    width: 20px;
+  }
+
+  .timeline > li > .timeline-content:after {
+    left: -28px;
+  }
+
+  .timeline-content > ul {
+    padding-left: 20px;
+  }
+
+  .timeline > li > .timeline-content > em > span {
+    margin-right: 4px;
+  }
+
+  .about-text > p {
+    font-size: 16px;
+  }
+
+  .about-btns > .btn-custom {
+    max-width: 100%;
+    margin-right: 0;
+    padding: 17px 20px;
+    letter-spacing: 2px;
+    line-height: 1.5;
+  }
+
+  .skill-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .skill {
+    margin-right: 0;
+  }
+
+  #contact textarea {
+    width: 100%;
+    resize: vertical;
   }
 }
 

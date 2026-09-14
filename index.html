@@ -39,8 +39,16 @@
      <nav class="navbar navbar-default navbar-fixed-top">
           <div class="container">
                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                         data-target="#site-navigation" aria-controls="site-navigation" aria-expanded="false">
+                         <span class="sr-only">Toggle navigation</span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                    </button>
                     <a class="navbar-brand" href="#home">Peter Kregler Gotil</a>
                </div>
+               <div class="collapse navbar-collapse" id="site-navigation">
                <ul class="nav navbar-nav navbar-right">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#service">About</a></li>
@@ -49,6 +57,7 @@
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                </ul>
+               </div>
           </div>
      </nav>
 
@@ -111,7 +120,6 @@
         		</div>
 
     	</div>
-    </div>
 </section>
 
 
@@ -139,7 +147,6 @@
 						<span> | </span>
 						<span>2026-Present</span>
 					</em>
-						<p><b>Major:</b> Computer Science</p>
 					<em>
 						<span>Bachelor's Degree</span>
 						<span> | </span>
@@ -174,7 +181,7 @@
 					<h4>Christianshavns Skole</h4>
 
 					<em>
-						<span>Primary School<span>
+						<span>Primary School</span>
 						<span> | </span>
 						<span>2008-2018</span>
 					</em>
@@ -212,8 +219,7 @@
                               </em>
                               <ul style="list-style-type:disc;">
 								   <li>Languages and technologies: Typescript/Javascript, React, SQL, CSS, Tailwind, Claude code</li> 
-								   <li>Projects:</li>
-                                   <li>Developing a ticket designer in typescript with React, which enables customizable event ticketing for companies and PDF generated tickets</li>
+                                   <li>Developed a ticket designer in typescript with React, which enables customizable event ticketing for companies and PDF generated tickets</li>
                                    <li>Experience integrating Business Central's using API's, endpoints & webhooks </li>
                                    <li>Developing and maintaining a browser extension published on google extensions</li>
                                    <li>Experience doing database migrations and API migration, this includes moving our API system on a product from cloudflare pages to cloudflare workers</li>
@@ -397,7 +403,7 @@
 
                               </div>
 
-                              <div class="g-recaptcha" data-sitekey="6LeOcP0qAAAAAEg20zJtG9W9MpbIw-_V07H0Gctx"></div>
+                              <div class="g-recaptcha" data-size="compact" data-sitekey="6LeOcP0qAAAAAEg20zJtG9W9MpbIw-_V07H0Gctx"></div>
                               <br>
 
                               <script>
@@ -442,6 +448,7 @@
                     </div>
                </div>
           </div>
+     </div>
 </footer>
 
 <!-- SCRIPTS -->
@@ -454,7 +461,7 @@
 <script src="js/wow.min.js"></script>
 <script src="js/custom.js"></script>
 
-<  <!-- ACTIVE NAV -->
+<!-- ACTIVE NAV -->
   <script>
      $(window).on('scroll', function () {
           const scrollPos = $(document).scrollTop();

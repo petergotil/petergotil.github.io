@@ -10,7 +10,16 @@
 
         // navigation Section
         $('.navbar-collapse a').on('click',function(){
-          $(".navbar-collapse").collapse('hide');
+          if ($('.navbar-toggle').is(':visible')) {
+            $(".navbar-collapse").collapse('hide');
+          }
+        });
+
+        $('#site-navigation').on('keydown', function(event) {
+          if (event.key === 'Escape' && $('.navbar-toggle').is(':visible')) {
+            $(this).collapse('hide');
+            $('.navbar-toggle').focus();
+          }
         });
 
 
@@ -22,7 +31,9 @@
           $('#work').parallax("50%", 30);
           $('#contact').parallax("50%", 10);
           }
-        initParallax();
+        if (window.matchMedia('(min-width: 992px) and (hover: hover) and (prefers-reduced-motion: no-preference)').matches) {
+          initParallax();
+        }
         
 
         // smoothscroll js
